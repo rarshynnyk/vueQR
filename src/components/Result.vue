@@ -1,37 +1,24 @@
 <template>
-  <div class="scan">
-    <h1>Scan your code</h1>
-    <Scanner
-      @scan="onScan"
-    />
+  <div>
+    <div class="scan__result">
+      <!-- {{result}} -->
+    </div>
+    <div class="scan__reset">
+      <router-link
+        to="/scan"
+        class="btn"
+      >
+        Reset
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-import Scanner from './ui/Scanner'
-
-export default {
-  components: {
-    Scanner
-  },
-  methods: {
-    onScan (result) {
-      this.$router.push({
-        path: 'result',
-        query: {
-          data: result
-        }
-      })
-    }
-  }
-}
+export default {}
 </script>
 
 <style scoped>
-  .scan {
-    text-align: center;
-  }
-
   .scan__result {
     font-size: 20px;
     font-weight: 600;
@@ -50,5 +37,6 @@ export default {
     padding: 10px 20px;
     border-radius: 100px;
     cursor: pointer;
+    text-decoration: none;
   }
 </style>
