@@ -16,39 +16,10 @@ export default {
   },
   methods: {
     onScan (result) {
-      this.$router.push({
-        path: 'result',
-        query: {
-          data: result
-        }
-      })
+      this.$store.dispatch('qr/setCode', result)
+      this.$router.push({ path: 'result' })
     }
   }
 }
 </script>
 
-<style scoped>
-  .scan {
-    text-align: center;
-  }
-
-  .scan__result {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
-  .btn {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    background: #4bb685;
-    border: 1px solid #4bb685;
-    color: #fff;
-    outline: none;
-    padding: 10px 20px;
-    border-radius: 100px;
-    cursor: pointer;
-  }
-</style>

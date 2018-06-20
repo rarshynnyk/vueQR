@@ -1,21 +1,36 @@
 <template>
   <div>
     <div class="scan__result">
-      <!-- {{result}} -->
+      {{result}}
     </div>
     <div class="scan__reset">
-      <router-link
-        to="/scan"
+      <button
+        type="button"
         class="btn"
+        @click="resetCode"
       >
         Reset
-      </router-link>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapState } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState({
+      result: state => state.qr.code
+    })
+  },
+  methods: {
+    resetCode () {
+      this.$store.dispatch('qr/resetCode')
+      this.$router.push({ path: 'scan' })
+    }
+  }
+}
 </script>
 
 <style scoped>
