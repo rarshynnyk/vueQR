@@ -29,6 +29,11 @@ export default {
       this.$store.dispatch('qr/resetCode')
       this.$router.push({ path: 'scan' })
     }
+  },
+  mounted () {
+    if (!this.result.length) {
+      this.resetCode()
+    }
   }
 }
 </script>
