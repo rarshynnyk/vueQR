@@ -1,6 +1,6 @@
 <template>
   <div class="scan">
-    <h1>Scan your code</h1>
+    <h1>{{ $t('scan.header') }}</h1>
     <Scanner
       @scan="onScan"
     />
@@ -22,4 +22,3 @@ export default {
   }
 }
 </script>
-

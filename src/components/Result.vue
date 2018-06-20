@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>{{ $t('result.header') }}</h1>
     <div class="scan__result">
       {{result}}
     </div>
@@ -9,7 +10,7 @@
         class="btn"
         @click="resetCode"
       >
-        Reset
+        {{ $t('result.resetBtn') }}
       </button>
     </div>
   </div>
